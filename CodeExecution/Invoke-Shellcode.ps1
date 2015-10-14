@@ -11,10 +11,10 @@ function Invoke-Shellcode
     [Byte[]]
     $Shellcode,
     
-    [Parameter( ParameterSetName = 'Metasploit' )]
-    [ValidateSet( 'windows/meterpreter/reverse_http',
-                  'windows/meterpreter/reverse_https',
-                  IgnoreCase = $True )]
+ #   [Parameter( ParameterSetName = 'Metasploit' )]
+  #  [ValidateSet( 'windows/meterpreter/reverse_http',
+   #               'windows/meterpreter/reverse_https',
+    #              IgnoreCase = $True )]
     [String]
     $Payload = 'windows/meterpreter/reverse_https',
     
